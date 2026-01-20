@@ -1,9 +1,8 @@
+use crate::{
+    training_data::Sample,
+    types::{DataVector, Scalar},
+};
 use std::iter::zip;
-
-use crate::training_data::TrainingData;
-
-type Scalar = f32;
-type DataVector = nalgebra::DVector<Scalar>;
 
 pub struct Network {
     sizes: Vec<usize>,
@@ -58,7 +57,7 @@ impl Network {
 
     pub fn sgd(
         &self,
-        _training_data: TrainingData,
+        _training_data: Vec<Sample>,
         _epochs: usize,
         _mini_batch_size: usize,
         _learning_rate: f32,
